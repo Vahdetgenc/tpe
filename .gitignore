@@ -1,0 +1,15 @@
+# Ignore target folders in projects
+/src/*/*/target
+/test/*/target
+/test/*/*/target
+/test/*/*/*/target
+/src/libraries/*/src/META-INF
+/src/libraries/*/src/main/java/META-INF
+/src/framework/_core/src/main/*/META-INF
+/src/framework/_theming/src/META-INF
+/src/framework/maven/archetypes/*/target
+/src/framework/maven/poms/*/target
+/src/test/_databinding/src/main/webapp/WEB-INF/classes
+
+# Ignore Java
+*.class
