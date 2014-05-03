@@ -13,4 +13,4 @@
 
 # Ignore Java
 *.class
-/.settings/
+.settings/
