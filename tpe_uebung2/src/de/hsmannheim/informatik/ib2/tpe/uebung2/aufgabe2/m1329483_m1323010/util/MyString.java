@@ -1,6 +1,5 @@
 package de.hsmannheim.informatik.ib2.tpe.uebung2.aufgabe2.m1329483_m1323010.util;
 
-
 public class MyString implements IComparable {
 
 	private String value;
@@ -9,30 +8,8 @@ public class MyString implements IComparable {
 		setValue(value);
 	}
 
-	public String getValue() {
-		return value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-	}
-	
 	public IComparable clone() {
 		return new MyString(this.value);
-	}
-
-
-	@Override
-	public String toString() {
-		return "" + getValue();
-	}
-	
-
-	@Override
-	public int hashCode() {
-		int hash = 1;
-		hash = hash * 17 + getValue().hashCode();
-		return hash;
 	}
 
 	// this.value < value returns -1
@@ -42,20 +19,43 @@ public class MyString implements IComparable {
 	@Override
 	public int compareTo(Object obj) throws ClassCastException {
 
-		try{
-			if (this.getValue().compareToIgnoreCase(((MyString) obj).getValue()) < 0) {
+		try {
+			if (this.getValue()
+					.compareToIgnoreCase(((MyString) obj).getValue()) < 0) {
 				return -1;
-			} else if (this.getValue().compareToIgnoreCase(((MyString) obj).getValue()) == 0) {
+			} else if (this.getValue().compareToIgnoreCase(
+					((MyString) obj).getValue()) == 0) {
 				return 0;
 			} else {
 				return 1;
 			}
 		} catch (NullPointerException e) {
-			return 1; // second obj == null, for sort null is similar to less than
+			return 1; // second obj == null, for sort null is similar to less
+						// than
 		} catch (ClassCastException e) {
 			Print.print("not comparable");
-			throw e; 
+			throw e;
 		}
-		
+
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 1;
+		hash = hash * 17 + getValue().hashCode();
+		return hash;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return "" + getValue();
 	}
 }

@@ -1,11 +1,10 @@
 /* 		
-*		HS Mannheim - 2IB - TPE - †bung 2 - Aufgabe 2.2
-*		Members:	Josua Geiger 1322010; Sven Koehler 1329483	
-*		Prof Dr. Schramm
-*/
+ *		HS Mannheim - 2IB - TPE - †bung 2 - Aufgabe 2.2
+ *		Members:	Josua Geiger 1322010; Sven Koehler 1329483	
+ *		Prof Dr. Schramm
+ */
 
 package de.hsmannheim.informatik.ib2.tpe.uebung2.aufgabe2.m1329483_m1323010;
-
 
 import de.hsmannheim.informatik.ib2.tpe.uebung2.aufgabe2.m1329483_m1323010.util.IComparable;
 import de.hsmannheim.informatik.ib2.tpe.uebung2.aufgabe2.m1329483_m1323010.util.MyInt;
@@ -20,20 +19,18 @@ public class Main {
 	public static IComparable myIntArray[];
 	public static IComparable myStringArray[];
 
-	public static void main(String[] args) {
-		
-		// initialize random and sort with shakerSort (true).
-		Print.print("Initialize random and test with shakerSort: \n 1) myIntArray \n 2) myStringArray \n"); 
-		initialize();
-		Sort.sortArray(true, myIntArray);
-		Sort.sortArray(true, myStringArray);
-		
-		// initialize random and sort with insertionSort (false)
-		Print.print("Initialize random and test with insertionSort: \n 1) myIntArray \n 2) myStringArray \n");
-		initialize();
-		Sort.sortArray(false, myIntArray);
-		Sort.sortArray(false, myStringArray);
-
+	// helper to create random words with big letters
+	// gets the length of the word as int.
+	public static String createRandomWord(int lengthOfTheWord) {
+		String randomWord = "";
+		char randomLetter;
+		for (int i = 0; i < lengthOfTheWord; i++) {
+			// creates random letters between 'A' - 'Z'
+			// Unicode-Letter-range between 65 - 90
+			randomLetter = (char) ((((int) (Math.random() * 100)) % 26) + 65);
+			randomWord += randomLetter;
+		}
+		return randomWord;
 	}
 
 	static void initialize() {
@@ -51,18 +48,20 @@ public class Main {
 		}
 	}
 
-	// helper to create random words with big letters
-	// gets the length of the word as int.
-	public static String createRandomWord(int lengthOfTheWord) {
-		String randomWord = "";
-		char randomLetter;
-		for (int i = 0; i < lengthOfTheWord; i++) {
-			// creates random letters between 'A' - 'Z'
-			// Unicode-Letter-range between 65 - 90
-			randomLetter = (char) ((((int) (Math.random() * 100)) % 26) + 65);
-			randomWord += randomLetter;
-		}
-		return randomWord;
+	public static void main(String[] args) {
+
+		// initialize random and sort with shakerSort (true).
+		Print.print("Initialize random and test with shakerSort: \n 1) myIntArray \n 2) myStringArray \n");
+		initialize();
+		Sort.sortArray(true, myIntArray);
+		Sort.sortArray(true, myStringArray);
+
+		// initialize random and sort with insertionSort (false)
+		Print.print("Initialize random and test with insertionSort: \n 1) myIntArray \n 2) myStringArray \n");
+		initialize();
+		Sort.sortArray(false, myIntArray);
+		Sort.sortArray(false, myStringArray);
+
 	}
 
 }

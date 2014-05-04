@@ -8,35 +8,15 @@ public class MyInt implements IComparable {
 		this.value = value;
 	}
 
-	public int getValue() {
-		return value;
-	}
-
-	public void setValue(int value) {
-		this.value = value;
-	}
-
 	public IComparable clone() {
 		return new MyInt(this.value);
-	}
-
-	@Override
-	public String toString() {
-		return "" + getValue();
-	}
-	
-	@Override
-	public int hashCode() {
-		int hash = 1;
-		hash = hash * 17 + getValue();
-		return hash;
 	}
 
 	// this.value < value returns -1
 	// this.value > value returns 1
 	// this.value == value returns 0
 	@Override
-	public int compareTo(Object o) throws ClassCastException{
+	public int compareTo(Object o) throws ClassCastException {
 		try {
 			if (this.getValue() < ((MyInt) (o)).getValue()) {
 				return -1;
@@ -46,11 +26,32 @@ public class MyInt implements IComparable {
 				return 1;
 			}
 		} catch (NullPointerException e) {
-			return 1; // second obj == null, for sort null is similar to less than
+			return 1; // second obj == null, for sort null is similar to less
+						// than
 		} catch (ClassCastException e) {
 			Print.print("not comparable");
 			throw e;
 		}
-		
+
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 1;
+		hash = hash * 17 + getValue();
+		return hash;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return "" + getValue();
 	}
 }

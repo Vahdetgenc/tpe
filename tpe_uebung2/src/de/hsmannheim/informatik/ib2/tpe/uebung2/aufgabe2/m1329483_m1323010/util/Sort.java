@@ -2,31 +2,6 @@ package de.hsmannheim.informatik.ib2.tpe.uebung2.aufgabe2.m1329483_m1323010.util
 
 public class Sort {
 
-	// kindOfSort = true --> ShakerSort; kindOfSort = false --> InsertionSort
-	public static void sortArray(boolean kindOfSort, IComparable[] ArrayToSort) {
-		if (kindOfSort) {
-			Print.print("Before shakerSort: ");
-			Print.printArray(ArrayToSort);
-			shakerSort(ArrayToSort);
-			Print.print("After shakerSort: ");
-			Print.printArray(ArrayToSort);
-		} else {
-			Print.print("Before insertionSort: ");
-			Print.printArray(ArrayToSort);
-			insertionSort(ArrayToSort);
-			Print.print("After insertionSort: ");
-			Print.printArray(ArrayToSort);
-		}
-	}
-
-	// Swaps two elements with the help of swapHelper
-	public static void swap(IComparable ArrayToSwap[], int bucket1, int bucket2) {
-		IComparable swapHelper;
-		swapHelper = ArrayToSwap[bucket1];
-		ArrayToSwap[bucket1] = ArrayToSwap[bucket2];
-		ArrayToSwap[bucket2] = swapHelper;
-	}
-
 	// sorts descending
 	// "<" --> sorts desc; ">" --> sorts rising
 	private static void insertionSort(IComparable[] ArrayToSort) {
@@ -79,6 +54,31 @@ public class Sort {
 				leftToRight = true; // switch the sorting-direction for the next step
 			}
 		}
+	}
+
+	// kindOfSort = true --> ShakerSort; kindOfSort = false --> InsertionSort
+	public static void sortArray(boolean kindOfSort, IComparable[] ArrayToSort) {
+		if (kindOfSort) {
+			Print.print("Before shakerSort: ");
+			Print.printArray(ArrayToSort);
+			shakerSort(ArrayToSort);
+			Print.print("After shakerSort: ");
+			Print.printArray(ArrayToSort);
+		} else {
+			Print.print("Before insertionSort: ");
+			Print.printArray(ArrayToSort);
+			insertionSort(ArrayToSort);
+			Print.print("After insertionSort: ");
+			Print.printArray(ArrayToSort);
+		}
+	}
+
+	// Swaps two elements with the help of swapHelper
+	public static void swap(IComparable ArrayToSwap[], int bucket1, int bucket2) {
+		IComparable swapHelper;
+		swapHelper = ArrayToSwap[bucket1];
+		ArrayToSwap[bucket1] = ArrayToSwap[bucket2];
+		ArrayToSwap[bucket2] = swapHelper;
 	}
 
 }
