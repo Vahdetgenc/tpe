@@ -1,6 +1,6 @@
 /* 		
  *		HS Mannheim - 2IB - TPE - †bung 2 - Aufgabe 2.2
- *		Members:	Josua Geiger 1322010; Sven Koehler 1329483	
+ *		Members:	Josua Geiger 1323010; Sven Koehler 1329483	
  *		Prof Dr. Schramm
  */
 
