@@ -26,8 +26,7 @@ public class MyInt implements IComparable {
 				return 1;
 			}
 		} catch (NullPointerException e) {
-			return 1; // second obj == null, for sort null is similar to less
-						// than
+			return 1; // second obj == null, for sort null is similar to less than
 		} catch (ClassCastException e) {
 			Print.print("not comparable");
 			throw e;
