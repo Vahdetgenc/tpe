@@ -28,7 +28,7 @@ public class ArrayStackTest {
 		stack.push(1);
 		stack.clear();
 		assertEquals(true, stack.isEmpty());
-
+ 
 		// overflow
 		stack.push(1);
 		stack.push(1);
