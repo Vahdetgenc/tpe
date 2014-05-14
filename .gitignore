@@ -14,3 +14,6 @@
 # Ignore Java
 *.class
 .settings/
+
+#Ignore mac specific files
+*.DS_Store
